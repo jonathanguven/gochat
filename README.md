@@ -6,6 +6,7 @@ A TCP chat application built using GoLang's net package. This application lets u
 ### 1. Clone the Repository
 ```
 $ git clone https://github.com/jonathanguven/gochat/
+$ cd gochat
 ```
 ### 2. Run the App
 ```
