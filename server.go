@@ -38,7 +38,7 @@ func (s *server) run() {
 }
 
 func (s *server) newClient(conn net.Conn) {
-	log.Print("new client connected: %s", conn.RemoteAddr().String())
+	log.Printf("new client connected: %s", conn.RemoteAddr().String())
 
 	c := &client{
 		conn:     conn,
@@ -84,7 +84,7 @@ func (s *server) listRooms(c *client) {
 
 func (s *server) msg(c *client, args []string) {
 	if c.room == nil {
-		c.err(errors.New("You must join a room first"))
+		c.err(errors.New("you must join a room first"))
 		return
 	}
 	c.room.broadcast(c, fmt.Sprintf("%s: %s\n", c.name, strings.Join(args[1:], " ")))
